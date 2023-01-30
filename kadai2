@@ -1,0 +1,10 @@
+#!/bin/bash
+echo 借り手は地獄の闇金計算!
+echo "作成者 22cc0113"
+read -p "元金を入力 : " num1
+read -p "借入期間を10日単位で入力 : " num2
+num3=$(( $num2 / 10 ))
+num4=`echo "scale=3 ; 1.1 ^ $num3" | bc`
+sum=`echo "$num4 * $num1" | bc`
+sum2=`echo $sum | awk '{printf("%d\n",$1)}'`
+echo -e "返済合計額は \e[0;31m $sum2 \e[0m 円です" 
