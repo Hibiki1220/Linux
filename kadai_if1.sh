@@ -1,8 +1,6 @@
 #!/bin/bash
-
 #-eはファイルが存在するかをチェック
 if [ -e $1 ];then
-
 #-fはファイルかをチェック。ちがければディレクトリってことなのでtypeにDirectoryを入れる
     if [ -f $1 ];then
         type="File"
@@ -47,12 +45,10 @@ if [ -e $1 ];then
             fi
         fi
     fi
-    
 #ファイルが存在しなければ以下のelseのところで処理される。
 else
     read -p "作成しますか？:" num1
     case $num1 in
-    
 #num1にYesもしくはy(大文字小文字区別無し)が入力されたら下へ。ファイルかディレクトリを入力しそれに応じたコマンドで作成。セミコロン一つでコマンドを続けて実行している。
         [Yy][Ee][Ss]|[Yy]) read -p "File ot Dir:" num2; case $num2 in
                 [Ff]ile) touch $1 ; ls -l $1 ;;
