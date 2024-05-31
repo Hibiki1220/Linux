@@ -43,16 +43,19 @@ if [ -e $1 ];then
             else
                 echo $1"は"$type"です。アクセス権はありません。"
             fi
+        fi
     fi
 #ファイルが存在しなければ以下のelseのところで処理される。
 else
     read -p "作成しますか？:" num1
     case $num1 in
 #num1にYesもしくはy(大文字小文字区別無し)が入力されたら下へ。ファイルかディレクトリを入力しそれに応じたコマンドで作成。セミコロン一つでコマンドを続けて実行している。
-        [Yy][Ee][Ss]|[Yy])read -p "File ot Dir:" num2; case $num2 in
+        [Yy][Ee][Ss]|[Yy]) read -p "File ot Dir:" num2; case $num2 in
                 [Ff]ile) touch $1 ; ls -l $1 ;;
                 [Dd]ir) mkdir $1 ; echo ls -ld $1 ;;
-            esac
+                *) echo "認識できませんでした。もう一度最初からやり直してください" ;;
+            esac ;;
+        *) echo "認識できませんでした。もう一度最初からやり直してください" ;;
     esac
 fi
 
