@@ -48,7 +48,8 @@ if [ -e $1 ];then
             fi
         fi
     fi
-#ファイルが存在しなければ以下のelseのところで処理される。
+    
+#ファイルが存在しなければ以下のelseで処理される。
 else
     read -p "作成しますか？:" num1
     case $num1 in
