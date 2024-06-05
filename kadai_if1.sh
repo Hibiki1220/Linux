@@ -32,6 +32,7 @@ if [ -e $1 ];then
                 echo $1"は"$type"です。アクセス権は"$r $x"です。"
             else
                 echo $1"は"$type"です。アクセス権は"$r"です。"
+            fi
         fi
     else
         if [ -n $w ];then
