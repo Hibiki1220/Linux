@@ -1,5 +1,5 @@
 #!/bin/bash
-name=22cc0113
+name=0113
 echo -e "\e[1;33m $name \e[0m"
 while :
 do
