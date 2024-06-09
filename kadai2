@@ -1,6 +1,6 @@
 #!/bin/bash
 echo 借り手は地獄の闇金計算!
-echo "作成者 22cc0113"
+echo "作成者 0113"
 while :
 do
 read -p "元金を入力 : " num1
